@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, jsonify, send_file, request
 from flask_cors import CORS, cross_origin
 from io import BytesIO
 from PIL import Image
@@ -12,7 +12,7 @@ def index():
 
 # Route to handle image upload
 @app.route('/api/upload', methods=['POST'])
-@cross_origin()
+@cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
 def upload_image():
     # Check if the request has the image part
     if 'image' not in request.files:
