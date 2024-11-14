@@ -4,7 +4,7 @@ from io import BytesIO
 from PIL import Image
 
 app =Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "https://shielded-meadow-51410-81166774b395.herokuapp.com"}})
+CORS(app)
 
 @app.route('/')
 def index():
