@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from io import BytesIO
 from PIL import Image
 
