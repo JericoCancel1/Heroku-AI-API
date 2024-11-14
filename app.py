@@ -12,6 +12,7 @@ def index():
 
 # Route to handle image upload
 @app.route('/api/upload', methods=['POST'])
+@cross_origin()
 def upload_image():
     # Check if the request has the image part
     if 'image' not in request.files:
