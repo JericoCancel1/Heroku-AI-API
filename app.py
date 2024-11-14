@@ -1,8 +1,10 @@
 from flask import Flask, render_template, url_for
+from flask_cors import CORS
 from io import BytesIO
 from PIL import Image
 
 app =Flask(__name__)
+CORS(app, resources={r"/api/*": {"origins": "https://shielded-meadow-51410-81166774b395.herokuapp.com"}})
 
 @app.route('/')
 def index():
